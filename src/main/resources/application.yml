@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:eventsync
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+logging:
+  level:
+    com.example.eventsync: DEBUG
+
+eventsync:
+  hf:
+    model: cardiffnlp/twitter-roberta-base-sentiment-latest
+    timeoutMs: 6000
